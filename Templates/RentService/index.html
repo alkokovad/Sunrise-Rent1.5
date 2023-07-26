@@ -1,0 +1,558 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <title>Sunrise-rent main</title>
+</head>
+<body id="base">
+<header id="header_frame" style="margin: 0 -240px; padding: 18px 240px">
+    <div class="nav-logo">
+        <h1><a href="#base" id="header_h1" style="color: #ffffff;">SUN<span>RISE</span></a></h1>
+        <nav>
+            <h3><a href="#find" class="header_h3" style="text-decoration: line-through;">Как найти нас</a></h3>
+            <h3><a href="#photo" class="header_h3" style="text-decoration: line-through;">Фотоальбом</a></h3>
+            <h3><a href="#exp" class="header_h3" style="text-decoration: line-through;">Отзывы</a></h3>
+            <h3><a href="#feedback" class="header_h3" style="text-decoration: line-through;">Обратная связь</a></h3>
+        </nav>
+    </div>
+    <div class="head_number">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="rgba(255, 255, 255, .15)"
+             xmlns="http://www.w3.org/2000/svg">
+            <path id="header_number"
+                  d="M17.0621 18.2183C15.1077 20.1726 10.1028 18.3363 5.88327 14.1167C1.66372 9.89718 -0.172609 4.89227 1.7817 2.93795L3.06847 1.65118C3.9568 0.762856 5.42054 0.786338 6.33784 1.70363L8.33092 3.69672C9.24822 4.61401 9.2717 6.07776 8.38337 6.96609L8.10699 7.24247C7.62737 7.72209 7.58045 8.49581 8.0261 9.03587C8.45597 9.55679 8.9194 10.0756 9.42188 10.5781C9.92435 11.0806 10.4432 11.544 10.9641 11.9739C11.5042 12.4196 12.2779 12.3726 12.7575 11.893L13.0339 11.6166C13.9222 10.7283 15.386 10.7518 16.3033 11.6691L18.2964 13.6622C19.2137 14.5795 19.2371 16.0432 18.3488 16.9315L17.0621 18.2183Z"
+                  stroke="#FFFFFF" stroke-width="1.5"/>
+        </svg>
+        <h3 class="header_h3">+7 (961) 464 46 46</h3>
+    </div>
+    <div class="head_media">
+        <div>
+            <a href="https://vk.com/sunrise_rent">
+                <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="header_media" fill-rule="evenodd" clip-rule="evenodd"
+                          d="M23 46C35.7025 46 46 35.7025 46 23C46 10.2975 35.7025 0 23 0C10.2975 0 0 10.2975 0 23C0 35.7025 10.2975 46 23 46ZM34.5432 16C35.4034 16 35.5841 16.4154 35.4034 16.9808C35.0418 18.5355 31.5763 23.115 31.5763 23.115C31.2749 23.5672 31.1544 23.7934 31.5763 24.3022C31.7248 24.4973 32.0419 24.7886 32.4046 25.1219C32.7776 25.4647 33.1989 25.8518 33.535 26.2244C34.7569 27.5139 35.6777 28.6016 35.9342 29.3513C36.1686 30.1036 35.7622 30.4848 34.9496 30.4848H32.1051C31.3433 30.4848 30.9596 30.0844 30.1306 29.2194C29.7793 28.8527 29.3479 28.4026 28.7738 27.864C27.0862 26.3375 26.363 26.1397 25.9411 26.1397C25.3686 26.1397 25.1973 26.2918 25.1973 27.0542V29.447C25.1973 30.1036 24.9736 30.4848 23.1656 30.4848C20.1521 30.4848 16.8405 28.7686 14.49 25.6026C10.9643 20.9666 10 17.4613 10 16.7546C10 16.3589 10.1625 16 10.9752 16H13.8196C14.5466 16 14.82 16.2985 15.0927 17.0373C16.4838 20.8388 18.8294 24.1609 19.7937 24.1609C20.1553 24.1609 20.3212 24.0047 20.3212 23.1432V19.214C20.2559 18.0955 19.8394 17.6118 19.5309 17.2535C19.3404 17.0323 19.191 16.8588 19.191 16.6133C19.191 16.3149 19.4628 16 19.9148 16H24.3846C24.9873 16 25.1972 16.3024 25.1972 16.9808V22.2669C25.1972 22.8323 25.459 23.0301 25.6397 23.0301C26.0014 23.0301 26.3027 22.8323 26.9657 22.2104C29.0148 20.062 30.4613 16.7546 30.4613 16.7546C30.6421 16.3589 30.9756 16 31.6988 16H34.5432Z"
+                          fill="white"/>
+                </svg>
+            </a>
+            <a href="https://t.me/sunrisrent">
+                <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="header_media" fill-rule="evenodd" clip-rule="evenodd"
+                          d="M23 46C35.7025 46 46 35.7025 46 23C46 10.2975 35.7025 0 23 0C10.2975 0 0 10.2975 0 23C0 35.7025 10.2975 46 23 46ZM30.621 15.1442C30.621 15.1442 26.7816 16.7608 25.6494 17.2659C22.6961 18.5289 14.1804 22.1155 14.1804 22.1155C12.1623 22.9238 13.3436 23.6816 13.3436 23.6816C13.3436 23.6816 15.0664 24.2878 16.5432 24.7424C18.0198 25.197 18.8074 24.6919 18.8074 24.6919C18.8074 24.6919 22.2531 22.3681 25.7479 19.8928C28.209 18.1753 27.6184 19.5897 27.0277 20.1959C25.7479 21.5094 23.6313 23.5805 21.8592 25.2476C21.0717 25.9548 21.4655 26.561 21.81 26.8641C22.8122 27.7343 25.1724 29.3169 26.2439 30.0355C26.5409 30.2346 26.7389 30.3674 26.7816 30.4003C27.0277 30.6024 28.406 31.5116 29.2428 31.3096C30.0796 31.1075 30.178 29.9456 30.178 29.9456C30.178 29.9456 30.8179 25.8033 31.4086 22.0145C31.518 21.2706 31.6274 20.5422 31.7295 19.8631C31.9946 18.0981 32.2098 16.6653 32.2454 16.1546C32.3931 14.437 30.621 15.1442 30.621 15.1442Z"
+                          fill="white"/>
+                </svg>
+            </a>
+        </div>
+        <button id="sign_in_btn" class="sign_in_btn"><h4 class="header_h3" style="text-decoration: line-through;">Войти</h4></button>
+    </div>
+</header>
+<main>
+    <section class="header_sec" style="background-image: url({% static 'img/lake.jpg' %});">
+        <div class="img_lay">
+            <div class="header_cec_main">
+                <div class="header_sec_text">
+                    <div>
+                        <h1 style="color: #ffffff;">Кто мы такие?</h1>
+                        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
+                    </div>
+                    <a href="javascript:PopUpShow()" style="width: 50%;">
+                        <button><h4>Забронировать</h4></button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="b-popup" id="popup1">
+        <!--        <div class="b-popup-content">-->
+        <!--            <div class="popup_title">-->
+        <!--                <h1 class="bold">Этап 1</h1>-->
+        <!--                <h1 class="medium">Выберите пляж</h1>-->
+        <!--            </div>-->
+        <!--            <div class="info_inputs">-->
+        <!--                <div class="popup_inputs">-->
+        <!--                    <div>-->
+        <!--                        <h2>Выберите озеро:</h2>-->
+        <!--                        <select style="background-image: none;">-->
+        <!--                            <option>Большое Симагинское</option>-->
+        <!--                        </select>-->
+        <!--                    </div>-->
+        <!--                    <div>-->
+        <!--                        <h2>Выберите пляж:</h2>-->
+        <!--                        <select>-->
+        <!--                            <option>Вереск</option>-->
+        <!--                        </select>-->
+        <!--                    </div>-->
+        <!--                    <div>-->
+        <!--                        <h2>Выберите дату:</h2>-->
+        <!--                        <select>-->
+        <!--                            <option>20.05</option>-->
+        <!--                        </select>-->
+        <!--                    </div>-->
+        <!--                    <div>-->
+        <!--                        <h2>Выберите время:</h2>-->
+        <!--                        <select>-->
+        <!--                            <option>17:00</option>-->
+        <!--                        </select>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--                <div class="lake_info">-->
+        <!--                    <div class="about_lake">-->
+        <!--                        <h2>Особенности озера</h2>-->
+        <!--                        <ul>-->
+        <!--                            <li><h4>Чистый пляж, лежаки и удобства.</h4></li>-->
+        <!--                            <li><h4>Есть пиво, много пива. Его так много.</h4></li>-->
+        <!--                            <li><h4>Пить кальмаров, мало кальмаров</h4></li>-->
+        <!--                        </ul>-->
+        <!--                    </div>-->
+        <!--                    <button><h4>Как добраться до озера?</h4></button>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <div class="popup-nav">-->
+        <!--                <button style="background: none; border-color: #dae6f2; border-style: solid; stroke: 1px">-->
+        <!--                    <h4 style="color: #dae6f2">Назад</h4>-->
+        <!--                </button>-->
+        <!--                <button style="background-color: #3d97f2;">-->
+        <!--                    <h4>Далее</h4>-->
+        <!--                </button>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--        <div class="b-popup-content" style="grid-row-gap: 32px; grid-template-rows: auto auto auto auto;">-->
+        <!--            <div class="popup_title">-->
+        <!--                <h1 class="bold">Этап 2</h1>-->
+        <!--                <h1 class="medium">Выбор Оборудования</h1>-->
+        <!--            </div>-->
+        <!--            <div class="equipment_choose">-->
+        <!--                <div class="equip_nav">-->
+        <!--                    <div>-->
+        <!--                        <h3 class="eq_nav_h3">Сапы</h3>-->
+        <!--                        <span class="eq_nav_span"></span>-->
+        <!--                    </div>-->
+        <!--                    <div class="inactive">-->
+        <!--                        <h3 class="eq_nav_h3">Каяки</h3>-->
+        <!--                        <span class="eq_nav_span"></span>-->
+        <!--                    </div>-->
+        <!--                    <div class="inactive">-->
+        <!--                        <h3 class="eq_nav_h3">Катамараны</h3>-->
+        <!--                        <span class="eq_nav_span"></span>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--                <div class="equip_list">-->
+        <!--                    <div class="equip_card">-->
+        <!--                        <div class="equip_card_info">-->
+        <!--                            <img src="lake2.jpg">-->
+        <!--                            <div>-->
+        <!--                                <h3 style="color: #2e3d4d">Название лодки всем же не похуй</h3>-->
+        <!--                                <h2 class="big">500 руб/час</h2>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                        <button>-->
+        <!--                            <h4>Добавить</h4>-->
+        <!--                        </button>-->
+        <!--                    </div>-->
+        <!--                    <div class="equip_card">-->
+        <!--                        <div class="equip_card_info">-->
+        <!--                            <img src="lake2.jpg">-->
+        <!--                            <div>-->
+        <!--                                <h3 style="color: #2e3d4d">Название лодки всем же не похуй</h3>-->
+        <!--                                <h2 class="big">500 руб/час</h2>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                        <div class="eq_time_choose">-->
+        <!--                            <svg class="reduce" width="12" height="2" viewBox="0 0 12 2" fill="none"-->
+        <!--                                 xmlns="http://www.w3.org/2000/svg">-->
+        <!--                                <path d="M11 1H1" stroke="#1F2933" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                      stroke-linejoin="round"/>-->
+        <!--                            </svg>-->
+        <!--                            <h4 style="color: #1f2933;">1 час</h4>-->
+        <!--                            <svg class="increase" width="12" height="12" viewBox="0 0 12 12" fill="none"-->
+        <!--                                 xmlns="http://www.w3.org/2000/svg">-->
+        <!--                                <path d="M11 6H1" stroke="#1F2933" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                      stroke-linejoin="round"/>-->
+        <!--                                <path d="M6 11V1" stroke="#1F2933" stroke-width="1.5" stroke-linecap="round"-->
+        <!--                                      stroke-linejoin="round"/>-->
+        <!--                            </svg>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                    <div class="equip_card">-->
+        <!--                        <div class="equip_card_info">-->
+        <!--                            <img src="lake2.jpg">-->
+        <!--                            <div>-->
+        <!--                                <h3 style="color: #2e3d4d">Название лодки всем же не похуй</h3>-->
+        <!--                                <h2 class="big">500 руб/час</h2>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                        <button>-->
+        <!--                            <h4>Добавить</h4>-->
+        <!--                        </button>-->
+        <!--                    </div>-->
+        <!--                    <div class="equip_card">-->
+        <!--                        <div class="equip_card_info">-->
+        <!--                            <img src="lake2.jpg">-->
+        <!--                            <div>-->
+        <!--                                <h3 style="color: #2e3d4d">Название лодки всем же не похуй</h3>-->
+        <!--                                <h2 class="big">500 руб/час</h2>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                        <button>-->
+        <!--                            <h4>Добавить</h4>-->
+        <!--                        </button>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <div style="margin: 0 0 0 auto">-->
+        <!--                <h3 class="big">Итого 100 руб</h3>-->
+        <!--            </div>-->
+        <!--            <div class="popup-nav">-->
+        <!--                <button style="background: none; border-color: #dae6f2; border-style: solid; stroke: 1px">-->
+        <!--                    <h4 style="color: #dae6f2">Назад</h4>-->
+        <!--                </button>-->
+        <!--                <button style="background-color: #3d97f2;">-->
+        <!--                    <h4>Далее</h4>-->
+        <!--                </button>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <div class="b-popup-content" style="grid-row-gap: 32px; grid-template-rows: auto auto auto;">
+            <div class="popup_title">
+                <h1 class="bold">Этап 3</h1>
+                <h1 class="medium">Заполнение анкеты</h1>
+            </div>
+            <div class="profile">
+                <div class="profile_form">
+                    <div class="form_contacts">
+                        <h2 style="font-weight: 500; color: #2e3d4d">Контактные данные</h2>
+                        <div>
+                            <input class="popup_profile_input" type="text" placeholder="Имя">
+                            <input class="popup_profile_input" type="text" placeholder="Номер телефона">
+                        </div>
+                    </div>
+                    <div class="form_comments">
+                        <h2 style="font-weight: 500; color: #2e3d4d; margin-bottom: 16px;">Комментарий для заявки</h2>
+                        <input class="popup_profile_input" type="text" placeholder="Комментарий"
+                               style="margin: 0; height: 168px;">
+                    </div>
+                </div>
+                <div class="profile_info">
+                    <div class="profile_middle_info">
+                        <h2>Детали заказа</h2>
+                        <div class="profile_main_info">
+                            <div>
+                                <h3>Выбранное озеро</h3>
+                                <h3>Большое Симагинское</h3>
+                            </div>
+                            <div>
+                                <h3>Пляж</h3>
+                                <h3>Пляж хуил</h3>
+                            </div>
+                            <div>
+                                <h3>Дата</h3>
+                                <h3>21.03.2024</h3>
+                            </div>
+                            <div>
+                                <h3>Время</h3>
+                                <h3>16:00 - 18:00</h3>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="profile_short_info">
+                            <div>
+                                <h3>3 обородуования</h3>
+                                <h3>1000 руб.</h3>
+                            </div>
+                            <div>
+                                <h3>Скидка</h3>
+                                <h3>900 руб.</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result">
+                        <h2 class="big">Итого</h2>
+                        <h2 class="big">100 руб.</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-nav">
+                <button style="background: none; border-color: #dae6f2; border-style: solid; stroke: 1px">
+                    <h4 style="color: #dae6f2">Назад</h4>
+                </button>
+                <button style="background-color: #3d97f2;">
+                    <h4>Забронировать</h4>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--    <article class="photo_swiper" style="padding: 64px 0;">-->
+    <!--        <div class="photoalbum_head">-->
+    <!--            <h1 id="photo">Фотоальбом</h1>-->
+    <!--            <div>-->
+    <!--                <svg class="prev_btn" width="50" height="50" viewBox="0 0 50 50" fill="none"-->
+    <!--                     xmlns="http://www.w3.org/2000/svg">-->
+    <!--                    <path d="M50 50L25 50C11.1929 50 9.78513e-07 38.8071 2.18557e-06 25C3.39263e-06 11.1929 11.1929 -3.39263e-06 25 -2.18557e-06L50 0L50 50Z"-->
+    <!--                          fill="white"/>-->
+    <!--                    <path d="M27.0835 33.3335L18.7502 25.0002L27.0835 16.6668" stroke="#CDD8E3" stroke-width="1.5"-->
+    <!--                          stroke-linecap="round" stroke-linejoin="round"/>-->
+    <!--                </svg>-->
+    <!--                <svg class="next_btn" width="50" height="50" viewBox="0 0 50 50" fill="none"-->
+    <!--                     xmlns="http://www.w3.org/2000/svg">-->
+    <!--                    <path d="M0 0H25C38.8071 0 50 11.1929 50 25C50 38.8071 38.8071 50 25 50H0V0Z" fill="white"/>-->
+    <!--                    <path d="M22.9165 16.6667L31.2498 25.0001L22.9165 33.3334" stroke="#6E8EAF" stroke-width="1.5"-->
+    <!--                          stroke-linecap="round" stroke-linejoin="round"/>-->
+    <!--                </svg>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        <div style="position: absolute; margin-left: -240px; z-index: 1; width: 175px; height: 400px; background-image: linear-gradient(to right, #ffffff, rgba(0, 0, 0, 0)); opacity: 1;"></div>-->
+    <!--        <div style="position: absolute; right: 0; z-index: 1; width: 175px; height: 400px; background-image: linear-gradient(to left, #ffffff, rgba(0, 0, 0, 0)); opacity: 1;"></div>-->
+    <!--        <div class="swiper-wrapper" style="z-index: 0;">-->
+    <!--            <img class="swiper-slide" src="lake2.jpg"-->
+    <!--                 style="margin: 0 8px; aspect-ratio: 1 / 1; border-radius: 16px; width: 400px">-->
+    <!--            <img class="swiper-slide" src="lake2.jpg"-->
+    <!--                 style="margin: 0 8px; aspect-ratio: 1 / 1; border-radius: 16px; width: 400px">-->
+    <!--            <img class="swiper-slide" src="lake2.jpg"-->
+    <!--                 style="margin: 0 8px; aspect-ratio: 1 / 1; border-radius: 16px; width: 400px">-->
+    <!--            <img class="swiper-slide" src="lake2.jpg"-->
+    <!--                 style="margin: 0 8px; aspect-ratio: 1 / 1; border-radius: 16px; width: 400px">-->
+    <!--            <img class="swiper-slide" src="lake2.jpg"-->
+    <!--                 style="margin: 0 8px; aspect-ratio: 1 / 1; border-radius: 16px; width: 400px">-->
+    <!--            <img class="swiper-slide" src="lake2.jpg"-->
+    <!--                 style="margin: 0 8px; aspect-ratio: 1 / 1; border-radius: 16px; width: 400px">-->
+    <!--        </div>-->
+    <!--        <button>Смотреть всё</button>-->
+    <!--    </article>-->
+    <!--    <article class="beaches_carousel" style="padding: 64px 0; overflow: hidden;">-->
+    <!--        <div class="beaches_head">-->
+    <!--            <h1 id="find">Наши пляжи</h1>-->
+    <!--            <div>-->
+    <!--                <svg class="prev_btn_beaches" width="50" height="50" viewBox="0 0 50 50" fill="none"-->
+    <!--                     xmlns="http://www.w3.org/2000/svg">-->
+    <!--                    <path d="M50 50L25 50C11.1929 50 9.78513e-07 38.8071 2.18557e-06 25C3.39263e-06 11.1929 11.1929 -3.39263e-06 25 -2.18557e-06L50 0L50 50Z"-->
+    <!--                          fill="white"/>-->
+    <!--                    <path d="M27.0835 33.3335L18.7502 25.0002L27.0835 16.6668" stroke="#CDD8E3" stroke-width="1.5"-->
+    <!--                          stroke-linecap="round" stroke-linejoin="round"/>-->
+    <!--                </svg>-->
+    <!--                <svg class="next_btn_beaches" width="50" height="50" viewBox="0 0 50 50" fill="none"-->
+    <!--                     xmlns="http://www.w3.org/2000/svg">-->
+    <!--                    <path d="M0 0H25C38.8071 0 50 11.1929 50 25C50 38.8071 38.8071 50 25 50H0V0Z" fill="white"/>-->
+    <!--                    <path d="M22.9165 16.6667L31.2498 25.0001L22.9165 33.3334" stroke="#6E8EAF" stroke-width="1.5"-->
+    <!--                          stroke-linecap="round" stroke-linejoin="round"/>-->
+    <!--                </svg>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        <div class="swiper-wrapper beaches-wraper" style="z-index: 0;">-->
+    <!--            <div class="swiper-slide beach_card">-->
+    <!--                <div class="beach_photo_slider" style="overflow: hidden; z-index: 0">-->
+    <!--                    <div class="swiper-wrapper beach_wrapper">-->
+    <!--                        <img class="swiper-slide" src="lake2.jpg"-->
+    <!--                             style="max-width: 100%; aspect-ratio: 1 / 1; border-radius: 16px;">-->
+    <!--                        <img class="swiper-slide" src="lake2.jpg"-->
+    <!--                             style="max-width: 100%; aspect-ratio: 1 / 1; border-radius: 16px;">-->
+    <!--                        <img class="swiper-slide" src="lake2.jpg"-->
+    <!--                             style="max-width: 100%; aspect-ratio: 1 / 1; border-radius: 16px;">-->
+    <!--                    </div>-->
+    <!--                    <div class="beach-pagination"></div>-->
+    <!--                </div>-->
+    <!--                <div>-->
+    <!--                    <h2 class="big">Большое Симагинское</h2>-->
+    <!--                    <h3 style="color: #596c80">Огромное озеро с кучей возможностей для плаванья. Куча камней с-->
+    <!--                        вермишелью.</h3>-->
+    <!--                </div>-->
+    <!--                <h4 style="color: #3d97f2">Смотреть больше</h4>-->
+    <!--            </div>-->
+    <!--            <div class="swiper-slide beach_card">-->
+    <!--                <div class="beach_photo_slider" style="overflow: hidden; z-index: 0">-->
+    <!--                    <div class="swiper-wrapper beach_wrapper">-->
+    <!--                        <img class="swiper-slide" src="lake2.jpg"-->
+    <!--                             style="max-width: 100%; aspect-ratio: 1 / 1; border-radius: 16px;">-->
+    <!--                        <img class="swiper-slide" src="lake2.jpg"-->
+    <!--                             style="max-width: 100%; aspect-ratio: 1 / 1; border-radius: 16px;">-->
+    <!--                        <img class="swiper-slide" src="lake2.jpg"-->
+    <!--                             style="max-width: 100%; aspect-ratio: 1 / 1; border-radius: 16px;">-->
+    <!--                    </div>-->
+    <!--                    <div class="beach-pagination"></div>-->
+    <!--                </div>-->
+    <!--                <div>-->
+    <!--                    <h2 class="big">Большое Симагинское</h2>-->
+    <!--                    <h3 style="color: #596c80">Огромное озеро с кучей возможностей для плаванья. Куча камней с-->
+    <!--                        вермишелью.</h3>-->
+    <!--                </div>-->
+    <!--                <h4 style="color: #3d97f2">Смотреть больше</h4>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </article>-->
+    <!--    <section style="background: #f5f7fA; margin: 0 -240px; padding: 64px 240px">-->
+    <!--        <div class="feedback_head">-->
+    <!--            <h1 id="exp">Отзывы от реальных клиентов</h1>-->
+    <!--            <div>-->
+    <!--                <button class="throw_feedback"><h4>Оставить отзыв</h4></button>-->
+    <!--                <button class="see_all"><h4 style="color: #3d97f2;">Смотреть всё</h4></button>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        &lt;!&ndash;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;БЛОК ОТЗЫВЫ-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
+    <!--        <div class="feedback_list">-->
+    <!--            <div class="feedback_card">-->
+    <!--                <div class="avatar">-->
+    <!--                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+    <!--                        <mask id="mask0_703_2514" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"-->
+    <!--                              width="48" height="48">-->
+    <!--                            <circle cx="24" cy="24" r="24" fill="#f7f7f7"/>-->
+    <!--                        </mask>-->
+    <!--                        <g mask="url(#mask0_703_2514)">-->
+    <!--                            <circle cx="24.0004" cy="16.6803" r="8.42666" fill="#D9D9D9"/>-->
+    <!--                            <path d="M24.0005 29.3201C14.9656 29.3201 7.40668 35.6396 5.50292 44.0996C4.99206 46.3698 6.9269 48.2801 9.25386 48.2801H38.7472C41.0742 48.2801 43.009 46.3698 42.4981 44.0996C40.5944 35.6396 33.0355 29.3201 24.0005 29.3201Z"-->
+    <!--                                  fill="#D9D9D9"/>-->
+    <!--                        </g>-->
+    <!--                    </svg>-->
+    <!--                    <div>-->
+    <!--                        <h3 style="color: #1f2933">Александр Калошин</h3>-->
+
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--                <div>-->
+    <!--                    <h3 style="color: #1f2933; font-weight: 400; margin-bottom: 8px">Комментарий</h3>-->
+    <!--                    <h4 style="color: #2e3d4d; font-weight: 400; margin-bottom: 16px">Lorem ipsum dolor sit amet,-->
+    <!--                        consectetur adipiscing elit, sed do eiusmod-->
+    <!--                        tempor incididunt ut-->
+    <!--                        labore et dolore magna aliqua</h4>-->
+    <!--                    <h3 style="color: #1f2933; font-weight: 400; margin-bottom: 8px">Комментарий</h3>-->
+    <!--                    <h4 style="color: #2e3d4d; font-weight: 400; margin-bottom: 18px">Lorem ipsum dolor sit amet,-->
+    <!--                        consectetur adipiscing elit, sed do eiusmod-->
+    <!--                        tempor incididunt ut-->
+    <!--                        labore et dolore magna aliqua</h4>-->
+    <!--                    <h3 style="color: #3d97f2;">Читать полностью</h3>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        &lt;!&ndash;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
+    <!--    </section>-->
+    <!--        <section style="padding: 64px 0;">-->
+    <!--            <div>-->
+    <!--                <h1 id="feedback">Нужна помощь? Мы всегда рады помочь вам</h1>-->
+    <!--                <h2 style="margin: 10px 0 60px 0; color: #596c80">Напишите нам и вам все расскажем короче лол кек-->
+    <!--                    чебурек!</h2>-->
+    <!--            </div>-->
+    <!--            <div class="feedback_form">-->
+    <!--                <div>-->
+    <!--                    <h2 style="margin-bottom: 16px; color: #2e3d4d">Как вас зовут?</h2>-->
+    <!--                    <input type="text" placeholder="Имя">-->
+    <!--                </div>-->
+    <!--                <div>-->
+    <!--                    <h2 style="margin-bottom: 16px; color: #2e3d4d">Ваша почта?</h2>-->
+    <!--                    <input type="text" placeholder="Почта">-->
+    <!--                </div>-->
+    <!--                <div>-->
+    <!--                    <h2 style="margin-bottom: 16px; color: #2e3d4d">Какой у вас номер?</h2>-->
+    <!--                    <input type="text" placeholder="Номер">-->
+    <!--                </div>-->
+    <!--                <button><h4>Отправить запрос</h4></button>-->
+    <!--            </div>-->
+    <!--        </section>-->
+</main>
+<footer style="padding: 64px 420px; background: #f5f7fA; margin: 0 -240px 0 -240px;">
+    <div>
+        <div class="footer_main">
+            <div class="nav-logo">
+                <h1>SUN<span>RISE</span></h1>
+                <nav>
+                    <h4 style="color: #1f2933; text-decoration: line-through;">Как найти нас</h4>
+                    <h4 style="color: #1f2933; text-decoration: line-through;">Фотоальбом</h4>
+                    <h4 style="color: #1f2933; text-decoration: line-through;">Отзывы</h4>
+                    <h4 style="color: #1f2933; text-decoration: line-through;">Обратная связь</h4>
+                </nav>
+            </div>
+            <div>
+                <svg width="47" height="46" viewBox="0 0 47 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="23.5" cy="23" r="23" fill="#2E3D4D"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M35.9034 16.9808C36.0841 16.4154 35.9034 16 35.0432 16H32.1988C31.4756 16 31.1421 16.3589 30.9613 16.7546C30.9613 16.7546 29.5148 20.062 27.4657 22.2104C26.8027 22.8323 26.5014 23.0301 26.1397 23.0301C25.959 23.0301 25.6972 22.8323 25.6972 22.2669V16.9808C25.6972 16.3024 25.4873 16 24.8846 16H20.4148C19.9628 16 19.691 16.3149 19.691 16.6133C19.691 17.2565 20.7155 17.4048 20.8212 19.214V23.1432C20.8212 24.0047 20.6553 24.1609 20.2937 24.1609C19.3294 24.1609 16.9838 20.8388 15.5927 17.0373C15.32 16.2985 15.0466 16 14.3196 16H11.4752C10.6625 16 10.5 16.3589 10.5 16.7546C10.5 17.4613 11.4643 20.9666 14.99 25.6026C17.3405 28.7686 20.6521 30.4848 23.6656 30.4848C25.4736 30.4848 25.6973 30.1036 25.6973 29.447V27.0542C25.6973 26.2918 25.8686 26.1397 26.4411 26.1397C26.863 26.1397 27.5862 26.3375 29.2738 27.864C31.2024 29.6731 31.5203 30.4848 32.6051 30.4848H35.4496C36.2622 30.4848 36.6686 30.1036 36.4342 29.3513C36.1777 28.6016 35.2569 27.5139 34.035 26.2244C33.372 25.4895 32.3776 24.698 32.0763 24.3022C31.6544 23.7934 31.7749 23.5672 32.0763 23.115C32.0763 23.115 35.5418 18.5355 35.9034 16.9808Z"
+                          fill="white"/>
+                </svg>
+                <svg width="47" height="46" viewBox="0 0 47 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="23.5" cy="23" r="23" fill="#2E3D4D"/>
+                    <path d="M20.1675 23C20.1675 21.1591 21.6594 19.6664 23.5004 19.6664C25.3414 19.6664 26.8341 21.1591 26.8341 23C26.8341 24.8409 25.3414 26.3336 23.5004 26.3336C21.6594 26.3336 20.1675 24.8409 20.1675 23ZM18.3653 23C18.3653 25.836 20.6643 28.1349 23.5004 28.1349C26.3365 28.1349 28.6355 25.836 28.6355 23C28.6355 20.164 26.3365 17.8651 23.5004 17.8651C20.6643 17.8651 18.3653 20.164 18.3653 23ZM27.6387 17.6615C27.6386 17.8989 27.7089 18.1309 27.8407 18.3283C27.9725 18.5257 28.1598 18.6796 28.3791 18.7705C28.5983 18.8614 28.8396 18.8852 29.0724 18.839C29.3052 18.7928 29.5191 18.6786 29.687 18.5109C29.8549 18.3431 29.9693 18.1293 30.0157 17.8966C30.0621 17.6638 30.0384 17.4225 29.9477 17.2032C29.8569 16.9839 29.7032 16.7964 29.5059 16.6645C29.3086 16.5326 29.0766 16.4621 28.8393 16.462H28.8388C28.5206 16.4621 28.2156 16.5886 27.9905 16.8135C27.7655 17.0384 27.639 17.3434 27.6387 17.6615ZM19.4602 31.1398C18.4852 31.0954 17.9553 30.933 17.6031 30.7958C17.1362 30.614 16.8031 30.3975 16.4528 30.0478C16.1026 29.698 15.8858 29.3652 15.7048 28.8983C15.5675 28.5463 15.4051 28.0162 15.3608 27.0413C15.3123 25.9872 15.3026 25.6706 15.3026 23.0001C15.3026 20.3296 15.3131 20.0138 15.3608 18.9589C15.4052 17.9839 15.5688 17.4549 15.7048 17.1018C15.8866 16.635 16.1031 16.3018 16.4528 15.9516C16.8026 15.6014 17.1354 15.3846 17.6031 15.2036C17.9551 15.0663 18.4852 14.9039 19.4602 14.8596C20.5144 14.8111 20.831 14.8014 23.5004 14.8014C26.1698 14.8014 26.4868 14.8119 27.5418 14.8596C28.5168 14.904 29.0458 15.0676 29.3989 15.2036C29.8658 15.3846 30.1989 15.6018 30.5492 15.9516C30.8994 16.3014 31.1154 16.635 31.2972 17.1018C31.4345 17.4538 31.5969 17.9839 31.6412 18.9589C31.6897 20.0138 31.6994 20.3296 31.6994 23.0001C31.6994 25.6706 31.6897 25.9863 31.6412 27.0413C31.5968 28.0162 31.4336 28.5462 31.2972 28.8983C31.1154 29.3652 30.8989 29.6983 30.5492 30.0478C30.1994 30.3972 29.8658 30.614 29.3989 30.7958C29.0469 30.933 28.5168 31.0954 27.5418 31.1398C26.4876 31.1882 26.171 31.1979 23.5004 31.1979C20.8298 31.1979 20.514 31.1882 19.4602 31.1398ZM19.3774 13.0606C18.3128 13.109 17.5854 13.2778 16.9501 13.525C16.2921 13.7803 15.7351 14.1228 15.1785 14.6785C14.622 15.2342 14.2804 15.792 14.0251 16.4499C13.7779 17.0856 13.609 17.8126 13.5606 18.8772C13.5113 19.9434 13.5 20.2843 13.5 23C13.5 25.7157 13.5113 26.0566 13.5606 27.1228C13.609 28.1874 13.7779 28.9144 14.0251 29.5501C14.2804 30.2076 14.622 30.7661 15.1785 31.3215C15.735 31.877 16.2921 32.219 16.9501 32.475C17.5866 32.7222 18.3128 32.891 19.3774 32.9394C20.4443 32.9879 20.7846 33 23.5004 33C26.2162 33 26.5571 32.9887 27.6234 32.9394C28.688 32.891 29.415 32.7222 30.0507 32.475C30.7083 32.219 31.2657 31.8772 31.8223 31.3215C32.3788 30.7658 32.7197 30.2076 32.9757 29.5501C33.223 28.9144 33.3926 28.1874 33.4402 27.1228C33.4887 26.0558 33.5 25.7157 33.5 23C33.5 20.2843 33.4887 19.9434 33.4402 18.8772C33.3918 17.8126 33.223 17.0852 32.9757 16.4499C32.7197 15.7924 32.378 15.235 31.8223 14.6785C31.2666 14.1219 30.7083 13.7803 30.0515 13.525C29.415 13.2778 28.688 13.1082 27.6242 13.0606C26.5579 13.0121 26.217 13 23.5012 13C20.7854 13 20.4443 13.0113 19.3774 13.0606Z"
+                          fill="white"/>
+                </svg>
+                <svg width="47" height="46" viewBox="0 0 47 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="23.5" cy="23" r="23" fill="#2E3D4D"/>
+                    <path d="M14.6804 22.1155C14.6804 22.1155 23.1961 18.5289 26.1494 17.2659C27.2816 16.7608 31.121 15.1442 31.121 15.1442C31.121 15.1442 32.8931 14.437 32.7454 16.1546C32.6961 16.8618 32.3024 19.3371 31.9086 22.0145C31.3179 25.8033 30.678 29.9456 30.678 29.9456C30.678 29.9456 30.5796 31.1075 29.7428 31.3096C28.906 31.5116 27.5277 30.6024 27.2816 30.4003C27.0847 30.2488 23.5898 27.9755 22.3101 26.8641C21.9655 26.561 21.5717 25.9548 22.3592 25.2476C24.1313 23.5805 26.2479 21.5094 27.5277 20.1959C28.1184 19.5897 28.709 18.1753 26.2479 19.8928C22.7531 22.3681 19.3074 24.6919 19.3074 24.6919C19.3074 24.6919 18.5198 25.197 17.0432 24.7424C15.5664 24.2878 13.8436 23.6816 13.8436 23.6816C13.8436 23.6816 12.6623 22.9238 14.6804 22.1155Z"
+                          fill="white"/>
+                </svg>
+            </div>
+        </div>
+        <div class="footer_offtop">
+            <div class="footer_docs">
+                <h4 style="color: #7c91a6">Условия пользования</h4>
+                <h4 style="color: #7c91a6">Политика конфиденцальности</h4>
+                <h4 style="color: #7c91a6">Условия аренды</h4>
+            </div>
+            <div class="footer_comm">
+                <h3 style="color: #3d97f2">+7 (961) 464 46 46</h3>
+                <h3 style="color: #3d97f2">kapalohfswf@gmail.ry</h3>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    let header = document.getElementById("header_frame")
+    let h1 = document.getElementById("header_h1")
+    let h3 = document.getElementsByClassName("header_h3")
+    let media = document.getElementsByClassName("header_media")
+    let header_number = document.getElementById("header_number")
+    let sign_in_btn = document.getElementById("sign_in_btn")
+    window.onscroll = function(){
+
+        if(window.scrollY > 0){
+            header.style.background = "#ffffff"
+            h1.style.color = "#1f2933"
+            for (var i = 0; i < h3.length; i++) {
+                h3[i].style.color = "#1f2933"
+            }
+            for (var i = 0; i < media.length; i++) {
+                media[i].style.fill = "#1f2933"
+            }
+            header_number.style.stroke = "#1f2933"
+            sign_in_btn.style.borderColor = "#1f2933"
+        }
+        else{
+            header.style.background = "rgba(0, 0, 0, 0)"
+            h1.style.color = "#ffffff"
+            for (var i = 0; i < h3.length; i++) {
+                h3[i].style.color = "#ffffff"
+            }
+            for (var i = 0; i < media.length; i++) {
+                media[i].style.fill = "#ffffff"
+            }
+            header_number.style.stroke = "#ffffff"
+            sign_in_btn.style.borderColor = "#ffffff"
+        }
+    }
+
+
+</script>
+<script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+<script>
+    $(document).ready(function(){
+        //Скрыть PopUp при загрузке страницы
+        PopUpHide();
+    });
+    //Функция отображения PopUp
+    function PopUpShow(){
+        $("#popup1").show();
+    }
+    //Функция скрытия PopUp
+    function PopUpHide(){
+        $("#popup1").hide();
+    }
+
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="{% static 'js/slide.js' %}"></script>
+</body>
+</html>
