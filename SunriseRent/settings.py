@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_jsonform',
     'RentService.apps.RentServiceConfig',
 ]
 
@@ -77,7 +78,7 @@ WSGI_APPLICATION = 'SunriseRent.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
+        'NAME': 'postgres1',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',

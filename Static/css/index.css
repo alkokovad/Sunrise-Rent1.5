@@ -315,25 +315,28 @@ article button {
 
 
 .b-popup{
-    margin: auto -240px;
-    width: 100%;
+    width: 300%;
     height: 100%;
+    margin-left: 0;
     background-color: rgba(0,0,0,0.3);
     overflow:hidden;
     position:fixed;
-    top:0px;
+    top: 0px;
+    left: 0px;
     z-index: 3;
-    display: flex;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
 }
 .b-popup .b-popup-content{
     background-color: #ffffff;
     border-radius: 24px;
-    margin: auto 410px;
+    margin: auto;
     display: inline-grid;
     grid-template-rows: auto auto auto;
     grid-row-gap: 24px;
     padding: 28px;
+    margin: auto 410px;
 }
 
 .b-popup-content .popup_title {
@@ -455,13 +458,20 @@ article button {
 }
 
 .popup-nav {
-    display: flex-grid;
+    display: inline-grid;
     grid-template-columns: auto auto;
-    grid-gap-columns: 16px;
+    grid-column-gap: 16px;
     margin: 0 0 0 auto;
 }
 
 .popup-nav button {
+    border: none;
+    border-radius: 16px;
+    padding: 16px 24px;
+    margin: 0 0 0 0;
+}
+
+.popup-nav div {
     border: none;
     border-radius: 16px;
     padding: 16px 24px;
@@ -542,7 +552,7 @@ article button {
     grid-row-gap: 8px;
 }
 
-.equip_card button {
+.time_start_up {
     padding: 16px 24px;
     border-radius: 16px;
     border: none;
