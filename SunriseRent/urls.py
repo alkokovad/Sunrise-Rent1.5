@@ -20,4 +20,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('RentService.urls'), name="rentservice"),
+    path('',include('smart_selects.urls'))
 ]

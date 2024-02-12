@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Equipment, Customer, Order, Lake, Beach, Schedule
-
+from smart_selects.db_fields import ChainedForeignKey
 
 @admin.register(Equipment)
 class EquipmentAdmin(admin.ModelAdmin):
@@ -19,6 +19,7 @@ class OrderAdmin(admin.ModelAdmin):
 
 @admin.register(Lake)
 class LakeAdmin(admin.ModelAdmin):
+
     pass
 
 

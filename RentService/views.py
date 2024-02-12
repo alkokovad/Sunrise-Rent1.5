@@ -3,6 +3,7 @@ from django.views import View
 from RentService.models import Order, Customer, Lake, Beach, Schedule, Equipment
 import logging
 import json
+from .forms import Order_form
 
 
 class RentServiceView(View):
@@ -36,7 +37,9 @@ class RentServiceView(View):
                    'equipment_list': equipment_list,
                    'data': json.dumps(list(data)),
                    'date_data': json.dumps(list(date_data)),
-                   'lakes_data': json.dumps(list(lakes_data))}
+                   'lakes_data': json.dumps(list(lakes_data)),
+                   'order_form': Order_form()}
+        print(Order_form)
         return render(request, self.template_name, context)
 
     def post(self, request):

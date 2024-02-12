@@ -48,7 +48,8 @@
                 </svg>
             </a>
         </div>
-        <button id="sign_in_btn" class="sign_in_btn"><h4 class="header_h3" style="text-decoration: line-through;">Войти</h4></button>
+        <button id="sign_in_btn" class="sign_in_btn"><h4 class="header_h3" style="text-decoration: line-through;">
+            Войти</h4></button>
     </div>
 </header>
 <main>
@@ -81,28 +82,15 @@
             <div class="info_inputs">
                 <div class="popup_inputs">
                     <div>
-                        <h2>Выберите озеро:</h2>
-                        <select name="lake" style="background-image: none;" id="lake_select" onchange="validation(this)">
-                            {% for lake in lakes %}
-                            <option>{{ lake.name }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div>
-                        <h2>Выберите пляж:</h2>
-                        <select name="beach" onchange="validation(this)">
-                            {% for beach in beaches %}
-                            <option id="beach_option">{{ beach.name }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div>
-                        <h2>Выберите дату:</h2>
-                        <select name="date" onchange="validation(this)">
-                            {% for date in dates %}
-                            <option>{{ date.date }}</option>
-                            {% endfor %}
-                        </select>
+
+                        {{order_form.media.js}}
+                        {{ order_form.as_p }}
+<!--                        <select name="lake" style="background-image: none;" id="lake_select"-->
+<!--                                onchange="validation(this)">-->
+<!--                            {% for lake in lakes %}-->
+<!--                            <option>{{ lake.name }}</option>-->
+<!--                            {% endfor %}-->
+<!--                        </select>-->
                     </div>
                     <div>
                         <h2>Выберите время:</h2>
@@ -125,9 +113,9 @@
                     <div class="about_lake">
                         <h2>Особенности озера</h2>
                         <ul>
-                            <li><h4>Чистый пляж, лежаки и удобства.</h4></li>
-                            <li><h4>Есть пиво, много пива. Его так много.</h4></li>
-                            <li><h4>Пить кальмаров, мало кальмаров</h4></li>
+                            {% for feature in order_form.beach.features %}
+                            <li><h4>{{feature}}}</h4></li>
+                            {% endfor %}
                         </ul>
                     </div>
                     <button><h4>Как добраться до озера?</h4></button>
@@ -169,7 +157,7 @@
                             <img src="{{ equipment.photo }}">
                             <div>
                                 <h3 style="color: #2e3d4d">{{ equipment.name }}</h3>
-                                <h2 id="cost_of_choosen_equipment" class="big">500 руб/час</h2>
+                                <h2 id="cost_of_choosen_equipment" class="big">{{equipment.cost_for_hour}}</h2>
                             </div>
                         </div>
                         <div class="time_start_up" name="equipment_id">
@@ -266,7 +254,8 @@
                 </div>
             </div>
             <div class="popup-nav">
-                <div id="rs_back_to_equip" style="background: none; border-color: #dae6f2; border-style: solid; stroke: 1px">
+                <div id="rs_back_to_equip"
+                     style="background: none; border-color: #dae6f2; border-style: solid; stroke: 1px">
                     <h4 style="color: #dae6f2">Назад</h4>
                 </div>
                 <button id="rs_the_end" style="background-color: #3d97f2;">
@@ -491,9 +480,9 @@
     let media = document.getElementsByClassName("header_media")
     let header_number = document.getElementById("header_number")
     let sign_in_btn = document.getElementById("sign_in_btn")
-    window.onscroll = function(){
+    window.onscroll = function () {
 
-        if(window.scrollY > 0){
+        if (window.scrollY > 0) {
             header.style.background = "#ffffff"
             h1.style.color = "#1f2933"
             for (var i = 0; i < h3.length; i++) {
@@ -504,8 +493,7 @@
             }
             header_number.style.stroke = "#1f2933"
             sign_in_btn.style.borderColor = "#1f2933"
-        }
-        else{
+        } else {
             header.style.background = "rgba(0, 0, 0, 0)"
             h1.style.color = "#ffffff"
             for (var i = 0; i < h3.length; i++) {
@@ -523,49 +511,51 @@
 </script>
 <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         //Скрыть PopUp при загрузке страницы
         PopUpHide();
     });
+
     //Функция отображения PopUp
-    function PopUpShow(){
+    function PopUpShow() {
         $("#popup1").show();
     }
+
     //Функция скрытия PopUp
-    function PopUpHide(){
+    function PopUpHide() {
         $("#popup1").hide();
     }
 
 
 </script>
 <script>
-    rs_way_out.onclick = function() {
+    rs_way_out.onclick = function () {
         $("#popup1").hide();
     }
 
-    rs_the_end.onclick = function() {
+    rs_the_end.onclick = function () {
         $("#popup1").hide();
         popup1.style.marginLeft = '0%';
     }
 
-    rs_to_time.onclick = function() {
+    rs_to_time.onclick = function () {
         popup1.style.marginLeft = '0%';
     }
 
-    rs_to_equip.onclick = function() {
+    rs_to_equip.onclick = function () {
         popup1.style.marginLeft = '-100%';
     }
 
-    rs_back_to_equip.onclick = function() {
+    rs_back_to_equip.onclick = function () {
         popup1.style.marginLeft = '-100%';
     }
 
-    rs_to_end.onclick = function() {
+    rs_to_end.onclick = function () {
         popup1.style.marginLeft = '-200%';
     }
 </script>
 <script>
-    var data = JSON.parse ("{{data | escapejs}}");
+    var data = JSON.parse("{{data | escapejs}}");
     var cards = $(".equip_card");
 
     $(".time_start_up").on('click', function () {
@@ -580,16 +570,13 @@
         if (cur_card["0"].children[2].children[1].innerText == "1 час") {
             cur_card["0"].children[1].style.display = "";
             cur_card["0"].children[2].style.display = "none";
-        }
-        else if (cur_card["0"].children[2].children[1].innerText == "2 часа") {
+        } else if (cur_card["0"].children[2].children[1].innerText == "2 часа") {
             cur_card["0"].children[2].children[1].innerText = "1 час";
             cur_card["0"].children[0].children[1].children[1].innerText = data[0][0].cost_for_hour;
-        }
-        else if (cur_card["0"].children[2].children[1].innerText == "3 часа") {
+        } else if (cur_card["0"].children[2].children[1].innerText == "3 часа") {
             cur_card["0"].children[2].children[1].innerText = "2 часа";
             cur_card["0"].children[0].children[1].children[1].innerText = data[0][0].cost_for_hour * 2;
-        }
-        else if (cur_card["0"].children[2].children[1].innerText == "24 часа") {
+        } else if (cur_card["0"].children[2].children[1].innerText == "24 часа") {
             cur_card["0"].children[2].children[1].innerText = "3 часа";
             cur_card["0"].children[0].children[1].children[1].innerText = data[0][0].cost_for_3_hours;
             cur_card["0"].children[2].children[2].style.display = "";
@@ -601,12 +588,10 @@
         if (cur_card["0"].children[2].children[1].innerText == "1 час") {
             cur_card["0"].children[2].children[1].innerText = "2 часа";
             cur_card["0"].children[0].children[1].children[1].innerText = data[0][0].cost_for_hour * 2;
-        }
-        else if (cur_card["0"].children[2].children[1].innerText == "2 часа") {
+        } else if (cur_card["0"].children[2].children[1].innerText == "2 часа") {
             cur_card["0"].children[2].children[1].innerText = "3 часа";
             cur_card["0"].children[0].children[1].children[1].innerText = data[0][0].cost_for_3_hours;
-        }
-        else if (cur_card["0"].children[2].children[1].innerText == "3 часа") {
+        } else if (cur_card["0"].children[2].children[1].innerText == "3 часа") {
             cur_card["0"].children[2].children[1].innerText = "24 часа";
             cur_card["0"].children[0].children[1].children[1].innerText = data[0][0].cost_for_day;
             cur_card["0"].children[2].children[2].style.display = "none";
@@ -614,8 +599,8 @@
     });
 </script>
 <script>
-    var date_data = JSON.parse ("{{date_data | escapejs}}");
-    var lakes_data = JSON.parse ("{{lakes_data | escapejs}}");
+    var date_data = JSON.parse("{{date_data | escapejs}}");
+    var lakes_data = JSON.parse("{{lakes_data | escapejs}}");
     console.log(date_data);
     console.log(lakes_data);
 
@@ -628,20 +613,21 @@
 
     function validation(sel) {
         if (sel.name == "lake") {
-        alert("lake");
+            alert("lake");
         }
         if (sel.name == "beach") {
-        alert("beach");
+            alert("beach");
         }
         if (sel.name == "date") {
-        alert("date");
+            alert("date");
         }
         if (sel.name == "time") {
-        alert("time");
+            alert("time");
         }
     }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script src="{% static 'js/slide.js' %}"></script>
+<script src="/Static/js/chainedfk.js"></script>
 </body>
 </html>

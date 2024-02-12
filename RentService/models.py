@@ -2,7 +2,7 @@ import django.contrib.auth.backends
 from django_jsonform.models.fields import ArrayField
 from django.db import models
 import datetime
-
+from smart_selects.db_fields import ChainedForeignKey
 
 types = [
     ('SP', 'Сап'),
@@ -23,7 +23,7 @@ class Lake(models.Model):
 
 
 class Beach(models.Model):
-    lake = models.ForeignKey(Lake, on_delete=models.SET_NULL, null=True)
+    lake = models.ForeignKey(Lake,verbose_name='Озеро',on_delete=models.CASCADE,null=True)
     name = models.CharField('Название', max_length=256, unique=True)
     features = ArrayField(models.CharField(blank=True), blank=True)
 
@@ -37,7 +37,7 @@ class Beach(models.Model):
 
 class Equipment(models.Model):
     beach = models.ForeignKey(Beach, on_delete=models.SET_NULL, null=True)
-    name = models.CharField('Название', max_length=256, unique=True)
+    name = models.CharField(verbose_name='Название', max_length=256, unique=True)
     photo = models.ImageField('Фото', upload_to='Static/img/equipment/', default='Static/img/lake2.jpg')
     description = models.TextField('Описание', blank=True, null=True)
     is_active = models.BooleanField('Доступен?', default=True)
@@ -69,7 +69,7 @@ class Customer(models.Model):
 
 class Schedule(models.Model):
     beaches = models.ManyToManyField(Beach)
-    date = models.DateTimeField('Дата', unique=True)
+    date = models.DateField('Дата', unique=True)
 
     class Meta:
         verbose_name = 'День'
@@ -80,14 +80,27 @@ class Schedule(models.Model):
 
 
 class Order(models.Model):
+    lake = models.ForeignKey(Lake,on_delete=models.CASCADE,null=True)
     buyer_id = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)
-    equipment_id = models.ForeignKey(Equipment, on_delete=models.SET_NULL, null=True)
-    beach = models.ForeignKey(Beach, on_delete=models.SET_NULL, null=True)
+    equipment_id = ChainedForeignKey(Equipment,
+                                     chained_field='beach',
+                                     chained_model_field='beach',
+                                     show_all=False,
+                                     auto_choose=False,null=True)
+    beach = ChainedForeignKey(Beach,
+                              chained_field='lake',
+                              chained_model_field='lake',
+                              show_all=False,
+                              auto_choose=False)
     start_time = models.DateTimeField('Время начала аренды')
     rent_time = models.FloatField('Время арнеды')
     cost = models.IntegerField('Стоимость заказа')
     comment = models.CharField('Комментарий', max_length=256, blank=True)
-
+    rent_day = ChainedForeignKey(Schedule,
+                                 chained_field='beach',
+                                 chained_model_field='beaches',
+                                 show_all=False,
+                                 auto_choose=False,null=True)
     class Meta:
         verbose_name = 'Заказ'
         verbose_name_plural = 'Заказы'

@@ -5,3 +5,4 @@ sqlparse==0.4.4
 tzdata==2023.3
 django-jsonform==2.19.1
 pillow==10.0.1
+django-smart-selects = *

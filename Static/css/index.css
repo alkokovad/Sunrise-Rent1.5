@@ -393,6 +393,15 @@ article button {
     color: #2e3d4d;
 }
 
+.popup_inputs label {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    margin: auto 0 auto 0;
+    color: #2e3d4d;
+}
+
+
 .popup_inputs select {
     background-color: #f5f7fa;
     padding: 20px;
